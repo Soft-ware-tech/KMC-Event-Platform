@@ -1,0 +1,72 @@
+@page "{eventId:int}"
+@model KMCWeb.Pages.BO.AttendeesModel
+@{
+    ViewData["Title"] = "Attendees";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Organizer Dashboard</p>
+    <h1>Attendees — @Model.Ev?.Title</h1>
+</div>
+
+<section class="kmc-section kmc-section-tight">
+    <div class="kmc-stat-strip">
+        <div class="kmc-card kmc-stat">
+            <div class="num">@Model.Registrations.Sum(r => r.Quantity)</div>
+            <div class="label">Seats booked</div>
+        </div>
+        <div class="kmc-card kmc-stat">
+            <div class="num">@Model.Registrations.Count</div>
+            <div class="label">Bookings</div>
+        </div>
+        <div class="kmc-card kmc-stat">
+            <div class="num">Rs. @Model.Registrations.Sum(r => r.AmountPaid).ToString("N0")</div>
+            <div class="label">Total collected</div>
+        </div>
+    </div>
+
+    @if (!Model.Registrations.Any())
+    {
+        <div class="kmc-card kmc-empty">
+            <p>No one has registered for this event yet.</p>
+        </div>
+    }
+    else
+    {
+        <div class="kmc-table-wrap">
+            <table class="kmc-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Class</th>
+                        <th>Qty</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Booked On</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in Model.Registrations)
+                    {
+                        <tr>
+                            <td>@r.ParticipantName</td>
+                            <td>@r.Email</td>
+                            <td>@r.Phone</td>
+                            <td>@(r.TicketClassName ?? "—")</td>
+                            <td>@r.Quantity</td>
+                            <td>@(r.AmountPaid > 0 ? "Rs. " + r.AmountPaid.ToString("N2") : "Free")</td>
+                            <td>
+                                <span class="kmc-badge @(r.PaymentStatus == "Paid" ? "status-paid" : "status-na")">@r.PaymentStatus</span>
+                            </td>
+                            <td>@r.RegisteredDate.ToString("dd MMM yyyy, h:mm tt")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    <a asp-page="/BO/Dashboard" class="kmc-btn kmc-btn-ghost" style="margin-top:1.4rem;">← Back to Dashboard</a>
+</section>

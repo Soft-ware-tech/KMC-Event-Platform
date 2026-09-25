@@ -1,0 +1,33 @@
+﻿@page
+@model KMCWeb.Pages.Manager.AllBookingsModel
+@{
+    ViewData["Title"] = "All Public Bookings";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Platform Administration</p>
+    <h1>All Public Bookings</h1>
+</div>
+<section class="kmc-section kmc-section-tight">
+    <div class="kmc-table-wrap">
+        <table class="kmc-table">
+            <thead><tr><th>Event</th><th>Name</th><th>Email</th><th>Phone</th><th>Class</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody>
+                @foreach (var b in Model.Bookings)
+                {
+                    <tr>
+                        <td>@b.EventTitle</td>
+                        <td>@b.ParticipantName</td>
+                        <td>@b.Email</td>
+                        <td>@b.Phone</td>
+                        <td>@(b.TicketClassName ?? "—")</td>
+                        <td>@(b.AmountPaid > 0 ? "Rs. " + b.AmountPaid.ToString("N2") : "Free")</td>
+                        <td>@b.PaymentStatus</td>
+                        <td>@b.RegisteredDate.ToString("dd MMM yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <a asp-page="/Manager/Dashboard" class="kmc-btn kmc-btn-ghost" style="margin-top:1.4rem;">← Back</a>
+</section>

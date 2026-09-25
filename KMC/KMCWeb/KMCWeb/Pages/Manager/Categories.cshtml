@@ -1,0 +1,49 @@
+﻿@page
+@model KMCWeb.Pages.Manager.CategoriesModel
+@{
+    ViewData["Title"] = "Manage Categories";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Platform Administration</p>
+    <h1>Manage Categories</h1>
+</div>
+
+<section class="kmc-section kmc-section-tight">
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="kmc-alert kmc-alert-danger">@Model.ErrorMessage</div>
+    }
+
+    <div class="kmc-card kmc-form-card" style="max-width:none;">
+        <form method="post" asp-page-handler="Add" style="display:flex; gap:1rem; align-items:flex-end;">
+            <div class="kmc-field" style="flex:1; margin:0;">
+                <label for="NewCategoryName">New category name</label>
+                <input type="text" id="NewCategoryName" name="NewCategoryName" required placeholder="e.g. Theatre" />
+            </div>
+            <button type="submit" class="kmc-btn kmc-btn-gradient">+ Add</button>
+        </form>
+    </div>
+
+    <div class="kmc-table-wrap" style="margin-top:1.5rem;">
+        <table class="kmc-table">
+            <thead><tr><th>Category</th><th>Action</th></tr></thead>
+            <tbody>
+                @foreach (var c in Model.Categories)
+                {
+                    <tr>
+                        <td>@c.Name</td>
+                        <td>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@c.CategoryId"
+                                  onsubmit="return confirm('Delete category @c.Name?');">
+                                <button type="submit" class="kmc-btn kmc-btn-danger kmc-btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a asp-page="/Manager/Dashboard" class="kmc-btn kmc-btn-ghost" style="margin-top:1.4rem;">← Back to Dashboard</a>
+</section>

@@ -1,0 +1,75 @@
+@page "{eventId:int}"
+@model KMCWeb.Pages.BO.ManageTicketsModel
+@{
+    ViewData["Title"] = "Ticket Classes";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Organizer Dashboard</p>
+    <h1>Ticket Classes — @Model.Ev?.Title</h1>
+</div>
+
+<section class="kmc-section kmc-section-tight">
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <div class="kmc-alert kmc-alert-success">@Model.SuccessMessage</div>
+    }
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="kmc-alert kmc-alert-danger">@Model.ErrorMessage</div>
+    }
+
+    <div class="kmc-row" style="grid-template-columns: 1fr 1.2fr; align-items:start; gap:2rem;">
+        <div class="kmc-card kmc-form-card" style="max-width:none;">
+            <h3 style="font-size:1.05rem;">Add a ticket class</h3>
+            <form method="post" asp-page-handler="Add">
+                <input type="hidden" name="EventId" value="@Model.EventId" />
+                <div class="kmc-field">
+                    <label for="ClassName">Class</label>
+                    <select id="ClassName" name="ClassName">
+                        @foreach (var c in Model.ClassNames)
+                        {
+                            <option value="@c">@c</option>
+                        }
+                    </select>
+                </div>
+                <div class="kmc-field">
+                    <label for="Price">Price (Rs.)</label>
+                    <input type="number" id="Price" name="Price" min="0" step="0.01" required />
+                </div>
+                <div class="kmc-field">
+                    <label for="Capacity">Seat capacity for this class</label>
+                    <input type="number" id="Capacity" name="Capacity" min="1" value="50" required />
+                </div>
+                <button type="submit" class="kmc-btn kmc-btn-gradient" style="width:100%;">+ Add Ticket Class</button>
+            </form>
+        </div>
+
+        <div>
+            @if (!Model.TicketClasses.Any())
+            {
+                <div class="kmc-card kmc-empty">
+                    <p>No ticket classes yet. Add 1st / 2nd / 3rd Class tiers on the left so the public can book and pay.</p>
+                </div>
+            }
+            else
+            {
+                @foreach (var t in Model.TicketClasses)
+                {
+                    <div class="kmc-ticket-row" style="align-items:center;">
+                        <div>
+                            <div class="name">@t.ClassName</div>
+                            <div class="avail">Rs. @t.Price.ToString("N2") · @t.Sold sold of @t.Capacity capacity</div>
+                        </div>
+                        <form method="post" asp-page-handler="Delete" onsubmit="return confirm('Remove @t.ClassName?');">
+                            <input type="hidden" name="ticketClassId" value="@t.TicketClassId" />
+                            <input type="hidden" name="eventId" value="@Model.EventId" />
+                            <button type="submit" class="kmc-btn kmc-btn-danger kmc-btn-sm">Remove</button>
+                        </form>
+                    </div>
+                }
+            }
+            <a asp-page="/BO/Dashboard" class="kmc-btn kmc-btn-ghost" style="margin-top:1rem;">← Back to Dashboard</a>
+        </div>
+    </div>
+</section>

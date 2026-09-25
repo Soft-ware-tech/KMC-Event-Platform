@@ -1,0 +1,35 @@
+@page
+@model KMCWeb.Pages.LoginModel
+@{
+    ViewData["Title"] = "Organizer Login";
+}
+
+<section class="kmc-section" style="max-width:480px;">
+    <p class="kmc-eyebrow">For Organizers</p>
+    <h1>Welcome back</h1>
+    <p>Log in to manage your events, ticket classes and view who has registered.</p>
+
+    <div class="kmc-card kmc-form-card" style="margin-top:1.5rem;">
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="kmc-alert kmc-alert-danger">@Model.ErrorMessage</div>
+        }
+
+        <form method="post">
+            <div class="kmc-field">
+                <label for="Username">Username</label>
+                <input type="text" id="Username" name="Username" value="@Model.Username" required autofocus />
+            </div>
+            <div class="kmc-field">
+                <label for="Password">Password</label>
+                <input type="password" id="Password" name="Password" required />
+            </div>
+
+            <button type="submit" class="kmc-btn kmc-btn-gradient" style="width:100%; margin-top:.4rem;">Log In</button>
+        </form>
+    </div>
+
+    <p style="margin-top:1.2rem; text-align:center; color:var(--kmc-text-dim);">
+        New organizer? <a asp-page="/Register" style="color:var(--kmc-blue);">Create an account</a>
+    </p>
+</section>

@@ -1,0 +1,5 @@
+wwwroot\css\site.css
+wwwroot\images\hero-bg.png
+wwwroot\js\site.js
+C:\Users\User\Desktop\Sem 4\SOC_Assignment\KMC_SOC\KMC\KMCWeb\KMCWeb\wwwroot\js\site.js
+C:\Users\User\Desktop\Sem 4\SOC_Assignment\KMC_SOC\KMC\KMCWeb\KMCWeb\wwwroot\css\site.css

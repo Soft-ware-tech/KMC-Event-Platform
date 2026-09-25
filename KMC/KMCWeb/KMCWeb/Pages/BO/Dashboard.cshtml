@@ -1,0 +1,77 @@
+@page
+@model KMCWeb.Pages.BO.DashboardModel
+@{
+    ViewData["Title"] = "My Dashboard";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Organizer Dashboard</p>
+    <div class="kmc-section-head" style="margin-bottom:0;">
+        <h1>Hi, @Model.OrganizerName 👋</h1>
+        <a class="kmc-btn kmc-btn-gradient" asp-page="/BO/ManageEvent">+ Create New Event</a>
+    </div>
+</div>
+
+<section class="kmc-section kmc-section-tight">
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <div class="kmc-alert kmc-alert-success">@Model.SuccessMessage</div>
+    }
+    @if (!string.IsNullOrEmpty(Model.FailMessage))
+    {
+        <div class="kmc-alert kmc-alert-danger">@Model.FailMessage</div>
+    }
+
+    @if (!Model.MyEvents.Any())
+    {
+        <div class="kmc-card kmc-empty">
+            <h3>No events yet</h3>
+            <p>Create your first event to start accepting public registrations.</p>
+            <a class="kmc-btn kmc-btn-gradient" asp-page="/BO/ManageEvent">+ Create New Event</a>
+        </div>
+    }
+    else
+    {
+        <div class="kmc-table-wrap">
+            <table class="kmc-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Dates</th>
+                        <th>Registered</th>
+                        <th>Tickets</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ev in Model.MyEvents)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-page="/EventDetails" asp-route-id="@ev.EventId" style="font-weight:600;">@ev.Title</a>
+                            </td>
+                            <td>@ev.Category</td>
+                            <td>@ev.StartDate.ToString("dd MMM yyyy")</td>
+                            <td>@ev.RegisteredCount @(ev.RegistrationLimit > 0 ? $"/ {ev.RegistrationLimit}" : "")</td>
+                            <td>@(ev.HasTickets ? "Ticketed" : "Free")</td>
+                            <td>
+                                <div style="display:flex; gap:.4rem; flex-wrap:wrap;">
+                                    <a class="kmc-btn kmc-btn-ghost kmc-btn-sm" asp-page="/BO/ManageEvent" asp-route-id="@ev.EventId">Edit</a>
+                                    @if (ev.HasTickets)
+                                    {
+                                        <a class="kmc-btn kmc-btn-ghost kmc-btn-sm" asp-page="/BO/ManageTickets" asp-route-eventId="@ev.EventId">Tickets</a>
+                                    }
+                                    <a class="kmc-btn kmc-btn-ghost kmc-btn-sm" asp-page="/BO/Attendees" asp-route-eventId="@ev.EventId">Attendees</a>
+                                    <form method="post" asp-page-handler="Delete" asp-route-id="@ev.EventId" onsubmit="return confirm('Delete this event? This cannot be undone.');" style="display:inline;">
+                                        <button type="submit" class="kmc-btn kmc-btn-danger kmc-btn-sm">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

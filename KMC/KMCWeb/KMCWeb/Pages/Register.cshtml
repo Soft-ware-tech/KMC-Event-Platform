@@ -1,0 +1,59 @@
+@page
+@model KMCWeb.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Organizer Sign Up";
+}
+
+<section class="kmc-section" style="max-width:640px;">
+    <p class="kmc-eyebrow">For Organizers</p>
+    <h1>Create your organizer account</h1>
+    <p>Register once, then create and manage as many events as you like — local businesses, community groups and city officers are all welcome.</p>
+
+    <div class="kmc-card kmc-form-card" style="margin-top:1.5rem;">
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="kmc-alert kmc-alert-danger">@Model.ErrorMessage</div>
+        }
+
+        <form method="post">
+            <div class="kmc-field">
+                <label for="FullName">Full name</label>
+                <input type="text" id="FullName" name="FullName" value="@Model.FullName" required />
+            </div>
+            <div class="kmc-field">
+                <label for="OrganizationName">Organization (optional)</label>
+                <input type="text" id="OrganizationName" name="OrganizationName" value="@Model.OrganizationName" placeholder="e.g. Kandy Arts Society" />
+            </div>
+            <div class="kmc-row">
+                <div class="kmc-field">
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" value="@Model.Email" required />
+                </div>
+                <div class="kmc-field">
+                    <label for="Phone">Phone</label>
+                    <input type="tel" id="Phone" name="Phone" value="@Model.Phone" required />
+                </div>
+            </div>
+            <div class="kmc-field">
+                <label for="Username">Username</label>
+                <input type="text" id="Username" name="Username" value="@Model.Username" required />
+            </div>
+            <div class="kmc-row">
+                <div class="kmc-field">
+                    <label for="Password">Password</label>
+                    <input type="password" id="Password" name="Password" required minlength="6" />
+                </div>
+                <div class="kmc-field">
+                    <label for="ConfirmPassword">Confirm password</label>
+                    <input type="password" id="ConfirmPassword" name="ConfirmPassword" required minlength="6" />
+                </div>
+            </div>
+
+            <button type="submit" class="kmc-btn kmc-btn-gradient" style="width:100%; margin-top:.4rem;">Create Account</button>
+        </form>
+    </div>
+
+    <p style="margin-top:1.2rem; text-align:center; color:var(--kmc-text-dim);">
+        Already have an account? <a asp-page="/Login" style="color:var(--kmc-blue);">Log in</a>
+    </p>
+</section>

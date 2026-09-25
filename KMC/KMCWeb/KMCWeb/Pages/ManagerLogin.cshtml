@@ -1,0 +1,28 @@
+﻿@page
+@model KMCWeb.Pages.ManagerLoginModel
+@{
+    ViewData["Title"] = "Manager Login";
+}
+
+<section class="kmc-section" style="max-width:480px;">
+    <p class="kmc-eyebrow">Platform Administration</p>
+    <h1>Manager Login</h1>
+
+    <div class="kmc-card kmc-form-card" style="margin-top:1.5rem;">
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="kmc-alert kmc-alert-danger">@Model.ErrorMessage</div>
+        }
+        <form method="post">
+            <div class="kmc-field">
+                <label for="Username">Username</label>
+                <input type="text" id="Username" name="Username" required autofocus />
+            </div>
+            <div class="kmc-field">
+                <label for="Password">Password</label>
+                <input type="password" id="Password" name="Password" required />
+            </div>
+            <button type="submit" class="kmc-btn kmc-btn-gradient" style="width:100%; margin-top:.4rem;">Log In</button>
+        </form>
+    </div>
+</section>

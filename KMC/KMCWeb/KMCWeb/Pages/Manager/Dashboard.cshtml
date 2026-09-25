@@ -1,0 +1,131 @@
+﻿@page
+@model KMCWeb.Pages.Manager.DashboardModel
+@{
+    ViewData["Title"] = "Manager Dashboard";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Platform Administration</p>
+    <h1>Welcome, @Model.ManagerName</h1>
+</div>
+
+<section class="kmc-section kmc-section-tight">
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <div class="kmc-alert kmc-alert-success">@Model.SuccessMessage</div>
+    }
+
+    <div class="kmc-stat-strip">
+        <div class="kmc-card kmc-stat"><div class="num">@Model.Stats.TotalOrganizers</div><div class="label">Organizers</div></div>
+        <div class="kmc-card kmc-stat"><div class="num">@Model.Stats.TotalEvents</div><div class="label">Events</div></div>
+        <div class="kmc-card kmc-stat"><div class="num">@Model.Stats.TotalRegistrations</div><div class="label">Bookings</div></div>
+        <div class="kmc-card kmc-stat"><div class="num">Rs. @Model.Stats.TotalRevenue.ToString("N0")</div><div class="label">Revenue</div></div>
+    </div>
+
+    <h3 style="margin-top:2rem;">All Organizers</h3>
+    <div class="kmc-table-wrap">
+        <table class="kmc-table">
+            <thead><tr><th>Name</th><th>Organization</th><th>Email</th><th>Username</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+                @foreach (var o in Model.Organizers)
+                {
+                    <tr>
+                        <td>@o.FullName</td>
+                        <td>@o.OrganizationName</td>
+                        <td>@o.Email</td>
+                        <td>@o.Username</td>
+                        <td>
+                            @if (o.IsActive)
+                            {
+                                <span class="kmc-badge status-paid">Active</span>
+                            }
+                            else
+                            {
+                                <span class="kmc-badge status-na">Suspended</span>
+                            }
+                        </td>
+                        <td>
+                            <div style="display:flex; gap:.4rem;">
+                                <form method="post" asp-page-handler="ToggleActive" asp-route-id="@o.OrganizerId">
+                                    <button type="submit" class="kmc-btn kmc-btn-ghost kmc-btn-sm">
+                                        @(o.IsActive ? "Suspend" : "Reactivate")
+                                    </button>
+                                </form>
+                                <form method="post" asp-page-handler="DeleteOrganizer" asp-route-id="@o.OrganizerId"
+                                      onsubmit="return confirm('Remove @o.FullName and ALL their events? This cannot be undone.');">
+                                    <button type="submit" class="kmc-btn kmc-btn-danger kmc-btn-sm">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <h3 style="margin-top:2rem;">Events by Category</h3>
+<div class="kmc-card" style="padding:1.2rem;">
+    <div style="position:relative; height:260px;">
+        <canvas id="categoryChart"></canvas>
+    </div>
+</div>
+
+<h3 style="margin-top:1.5rem;">Revenue by Category</h3>
+<div class="kmc-card" style="padding:1.2rem;">
+    <div style="position:relative; height:260px;">
+        <canvas id="revenueChart"></canvas>
+    </div>
+</div>
+    <h3 style="margin-top:2rem;">Recent Activity</h3>
+    <div class="kmc-card" style="padding:1rem 1.4rem;">
+        @if (!Model.RecentActivity.Any())
+        {
+            <p style="color:var(--kmc-text-dim); margin:0;">No activity yet.</p>
+        }
+        else
+        {
+            @foreach (var a in Model.RecentActivity)
+            {
+                <p style="margin:.4rem 0; font-size:.9rem;">
+                    <strong>@a.ManagerName</strong> @a.ActionType.ToLower() <strong>"@a.TargetName"</strong>
+                    <span style="color:var(--kmc-text-dim);"> — @a.Timestamp.ToString("dd MMM, h:mm tt")</span>
+                </p>
+            }
+        }
+    </div>
+    <a asp-page="/Manager/AllBookings" class="kmc-btn kmc-btn-ghost" style="margin-top:1.5rem;">View All Public Bookings →</a>
+    <a href="/Manager/Categories" class="kmc-btn kmc-btn-ghost">Manage Categories →</a>
+</section>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script>
+        const categoryLabels = @Html.Raw(Json.Serialize(Model.Stats.EventsByCategory.Select(c => c.CategoryName)));
+        const eventCounts = @Html.Raw(Json.Serialize(Model.Stats.EventsByCategory.Select(c => c.EventCount)));
+        const revenues = @Html.Raw(Json.Serialize(Model.Stats.EventsByCategory.Select(c => c.TotalRevenue)));
+
+        new Chart(document.getElementById('categoryChart'), {
+            type: 'bar',
+            data: { labels: categoryLabels, datasets: [{ data: eventCounts, backgroundColor: '#3b82f6', borderRadius: 4 }] },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { ticks: { color: '#94a3b8', autoSkip: false, maxRotation: 45 }, grid: { display: false } },
+                    y: { ticks: { color: '#94a3b8', stepSize: 1 }, grid: { color: '#334155' } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'bar',
+            data: { labels: categoryLabels, datasets: [{ data: revenues, backgroundColor: '#ec4899', borderRadius: 4 }] },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { ticks: { color: '#94a3b8', autoSkip: false, maxRotation: 45 }, grid: { display: false } },
+                    y: { ticks: { color: '#94a3b8', callback: (v) => 'Rs.' + v }, grid: { color: '#334155' } }
+                }
+            }
+        });
+    </script>
+}

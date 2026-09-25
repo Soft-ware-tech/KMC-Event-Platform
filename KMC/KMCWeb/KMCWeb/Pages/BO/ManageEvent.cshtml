@@ -1,0 +1,94 @@
+@page "{id:int?}"
+@model KMCWeb.Pages.BO.ManageEventModel
+@{
+    ViewData["Title"] = Model.IsEdit ? "Edit Event" : "Create Event";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Organizer Dashboard</p>
+    <h1>@(Model.IsEdit ? "Edit Event" : "Create New Event")</h1>
+</div>
+
+<section class="kmc-section kmc-section-tight">
+    <div class="kmc-card kmc-form-card wide">
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="kmc-alert kmc-alert-danger">@Model.ErrorMessage</div>
+        }
+
+        <form method="post">
+            <input type="hidden" asp-for="EventId" />
+
+            <div class="kmc-field">
+                <label for="Title">Event title</label>
+                <input type="text" id="Title" name="Title" value="@Model.Title" required />
+            </div>
+
+            <div class="kmc-field">
+                <label for="Description">Description</label>
+                <textarea id="Description" name="Description">@Model.Description</textarea>
+            </div>
+
+            <div class="kmc-row">
+                <div class="kmc-field">
+                    <label for="Category">Category / type</label>
+                    <select id="Category" name="Category">
+                        @foreach (var c in Model.Categories)
+                        {
+                            <option value="@c" selected="@(c == Model.Category)">@c</option>
+                        }
+                    </select>
+                </div>
+                <div class="kmc-field">
+                    <label for="Location">Location</label>
+                    <input type="text" id="Location" name="Location" value="@Model.Location" placeholder="e.g. Kandy City Hall Grounds" required />
+                </div>
+            </div>
+
+            <div class="kmc-row">
+                <div class="kmc-field">
+                    <label for="StartDate">Start date</label>
+                    <input type="date" id="StartDate" name="StartDate" value="@Model.StartDate.ToString("yyyy-MM-dd")" required />
+                </div>
+                <div class="kmc-field">
+                    <label for="EndDate">End date</label>
+                    <input type="date" id="EndDate" name="EndDate" value="@Model.EndDate.ToString("yyyy-MM-dd")" required />
+                </div>
+            </div>
+
+            <div class="kmc-field">
+                <label for="ImageUrl">Banner image URL (optional)</label>
+                <input type="text" id="ImageUrl" name="ImageUrl" value="@Model.ImageUrl" placeholder="https://..." />
+                <span class="hint">Paste a link to a poster/banner image. Leave blank to use a default gradient banner.</span>
+            </div>
+
+            <div class="kmc-row">
+                <div class="kmc-field">
+                    <label for="RegistrationLimit">Total registration limit</label>
+                    <input type="number" id="RegistrationLimit" name="RegistrationLimit" min="0" value="@Model.RegistrationLimit" />
+                    <span class="hint">Maximum total participants across all ticket classes. 0 = unlimited.</span>
+                </div>
+                <div class="kmc-field">
+                    <label class="kmc-checkbox" style="margin-top:1.9rem;">
+                        <input type="checkbox" id="HasTickets" name="HasTickets" value="true" checked="@Model.HasTickets" />
+                        This event sells tickets (1st / 2nd / 3rd Class)
+                    </label>
+                    <span class="hint">Leave unchecked for free, walk-in style events.</span>
+                </div>
+            </div>
+
+            @if (Model.IsEdit && Model.HasTickets)
+            {
+                <div class="kmc-alert kmc-alert-success">
+                    Manage ticket prices &amp; seat limits per class from the
+                    <a asp-page="/BO/ManageTickets" asp-route-eventId="@Model.EventId" style="text-decoration:underline;">Ticket Classes</a> page after saving.
+                </div>
+            }
+
+            <button type="submit" class="kmc-btn kmc-btn-gradient" style="width:100%; margin-top:.6rem;">
+                @(Model.IsEdit ? "Save Changes" : "Create Event")
+            </button>
+            <a asp-page="/BO/Dashboard" class="kmc-btn kmc-btn-ghost" style="width:100%; margin-top:.6rem;">Cancel</a>
+        </form>
+    </div>
+</section>

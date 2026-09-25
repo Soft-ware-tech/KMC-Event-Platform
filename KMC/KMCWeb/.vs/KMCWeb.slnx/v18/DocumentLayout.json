@@ -1,0 +1,324 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\eventdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\eventdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\eventdetails.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\eventdetails.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\kmcweb.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\kmcweb.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\manager\\categories.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\manager\\categories.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\manager\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\manager\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\manager\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\manager\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\models\\categorymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\models\\categorymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\bo\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\bo\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\models\\managermodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\models\\managermodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\models\\organizermodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\models\\organizermodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\manager\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\manager\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\models\\activitylogmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\models\\activitylogmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\manager\\allbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\manager\\allbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\manager\\allbookings.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\manager\\allbookings.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\managerlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\managerlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|c:\\users\\user\\desktop\\sem 4\\soc_assignment\\kmc_soc\\kmc\\kmcweb\\kmcweb\\pages\\managerlogin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACEA20B-DB57-F833-64F8-08CCAD8A5D72}|KMCWeb\\KMCWeb.csproj|solutionrelative:kmcweb\\pages\\managerlogin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Program.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Program.cs",
+              "RelativeToolTip": "KMCWeb\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:07:54.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\EventDetails.cshtml",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\EventDetails.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\EventDetails.cshtml",
+              "RelativeToolTip": "KMCWeb\\Pages\\EventDetails.cshtml",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAswJEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-12T05:37:58.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EventDetails.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\EventDetails.cshtml.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\EventDetails.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\EventDetails.cshtml.cs",
+              "RelativeToolTip": "KMCWeb\\Pages\\EventDetails.cshtml.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T05:37:07.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KMCWeb",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\KMCWeb.csproj",
+              "RelativeDocumentMoniker": "KMCWeb\\KMCWeb.csproj",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\KMCWeb.csproj",
+              "RelativeToolTip": "KMCWeb\\KMCWeb.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-11T15:25:43.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Categories.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Categories.cshtml.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Manager\\Categories.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Categories.cshtml.cs",
+              "RelativeToolTip": "KMCWeb\\Pages\\Manager\\Categories.cshtml.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAmwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T13:31:44.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Categories.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Categories.cshtml",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Manager\\Categories.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Categories.cshtml",
+              "RelativeToolTip": "KMCWeb\\Pages\\Manager\\Categories.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowDAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-09T13:30:39.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Manager\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Dashboard.cshtml",
+              "RelativeToolTip": "KMCWeb\\Pages\\Manager\\Dashboard.cshtml",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAF8AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-07T07:26:31.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoryModels.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\CategoryModels.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Models\\CategoryModels.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\CategoryModels.cs",
+              "RelativeToolTip": "KMCWeb\\Models\\CategoryModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T13:00:56.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Login.cshtml.cs",
+              "RelativeToolTip": "KMCWeb\\Pages\\Login.cshtml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAmwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T12:57:21.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dashboard.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\BO\\Dashboard.cshtml.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\BO\\Dashboard.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\BO\\Dashboard.cshtml.cs",
+              "RelativeToolTip": "KMCWeb\\Pages\\BO\\Dashboard.cshtml.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAlwDQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T03:21:11.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrganizerModels.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\OrganizerModels.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Models\\OrganizerModels.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\OrganizerModels.cs",
+              "RelativeToolTip": "KMCWeb\\Models\\OrganizerModels.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T02:23:21.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ManagerModels.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\ManagerModels.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Models\\ManagerModels.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\ManagerModels.cs",
+              "RelativeToolTip": "KMCWeb\\Models\\ManagerModels.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAYwBQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T07:21:15.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Dashboard.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Dashboard.cshtml.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Manager\\Dashboard.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\Dashboard.cshtml.cs",
+              "RelativeToolTip": "KMCWeb\\Pages\\Manager\\Dashboard.cshtml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T07:24:47.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ActivityLogModels.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\ActivityLogModels.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Models\\ActivityLogModels.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Models\\ActivityLogModels.cs",
+              "RelativeToolTip": "KMCWeb\\Models\\ActivityLogModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T03:20:22.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "KMCWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-07T07:43:00.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AllBookings.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\AllBookings.cshtml.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Manager\\AllBookings.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\AllBookings.cshtml.cs",
+              "RelativeToolTip": "KMCWeb\\Pages\\Manager\\AllBookings.cshtml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA2wB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T07:33:56.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AllBookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\AllBookings.cshtml",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\Manager\\AllBookings.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\Manager\\AllBookings.cshtml",
+              "RelativeToolTip": "KMCWeb\\Pages\\Manager\\AllBookings.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwCAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-07T07:32:28.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ManagerLogin.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\ManagerLogin.cshtml",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\ManagerLogin.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\ManagerLogin.cshtml",
+              "RelativeToolTip": "KMCWeb\\Pages\\ManagerLogin.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-07T07:23:04.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ManagerLogin.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\ManagerLogin.cshtml.cs",
+              "RelativeDocumentMoniker": "KMCWeb\\Pages\\ManagerLogin.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Sem 4\\SOC_Assignment\\KMC_SOC\\KMC\\KMCWeb\\KMCWeb\\Pages\\ManagerLogin.cshtml.cs",
+              "RelativeToolTip": "KMCWeb\\Pages\\ManagerLogin.cshtml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwDIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T07:22:12.971Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

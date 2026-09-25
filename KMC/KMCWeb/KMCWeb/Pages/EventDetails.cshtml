@@ -1,0 +1,148 @@
+@page "{id:int}"
+@model KMCWeb.Pages.EventDetailsModel
+@{
+    ViewData["Title"] = Model.Ev?.Title ?? "Event";
+    var ev = Model.Ev!;
+    var soldOut = ev.IsFull;
+    var ended = DateTime.Now.Date > ev.EndDate.Date;
+}
+
+<div style="height:280px; background-size:cover; background-position:center; position:relative;
+     background-image:@(string.IsNullOrEmpty(ev.ImageUrl) ? "linear-gradient(135deg, rgba(63,169,255,.35), rgba(255,63,176,.35))" : $"url('{ev.ImageUrl}')");">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,14,28,.15) 0%, var(--kmc-navy) 100%);"></div>
+</div>
+
+<section class="kmc-section kmc-section-tight" style="margin-top:-70px; position:relative;">
+    <div class="kmc-row" style="grid-template-columns: 1.6fr 1fr; align-items:start; gap:2rem;">
+
+        <div>
+            <div class="kmc-card" style="padding:2rem;">
+                <span class="kmc-badge gradient">@ev.Category</span>
+                <h1 style="margin-top:.7rem;">@ev.Title</h1>
+                <div class="kmc-event-meta" style="font-size:.92rem; margin:1rem 0;">
+                    <span>📍 @ev.Location</span>
+                    <span>🗓️ @ev.StartDate.ToString("dddd, dd MMM yyyy") @(ev.StartDate.Date != ev.EndDate.Date ? "→ " + ev.EndDate.ToString("dddd, dd MMM yyyy") : "")</span>
+                    <span>🏛️ Organized by @(ev.OrganizerName ?? "KMC")</span>
+                    <span>👥 @ev.RegisteredCount registered @(ev.SeatsLeft.HasValue ? $"· {ev.SeatsLeft} seats left of {ev.RegistrationLimit}" : "· open registration")</span>
+                </div>
+                <hr class="kmc-divider" />
+                <p style="white-space:pre-line;">@(string.IsNullOrWhiteSpace(ev.Description) ? "No further description provided." : ev.Description)</p>
+
+                @if (ev.HasTickets && ev.TicketClasses.Any())
+                {
+                    <hr class="kmc-divider" />
+                    <h3 style="font-size:1.05rem;">Ticket Classes</h3>
+                    @foreach (var t in ev.TicketClasses)
+                    {
+                        <div class="kmc-ticket-row">
+                            <div>
+                                <div class="name">@t.ClassName</div>
+                                <div class="avail">@(t.Available > 0 ? $"{t.Available} of {t.Capacity} seats available" : "Sold out")</div>
+                            </div>
+                            <div class="kmc-price-tag">Rs. @t.Price.ToString("N2")</div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <div>
+            <div class="kmc-card kmc-form-card" style="max-width:none; padding:1.8rem;">
+                <h3 style="font-size:1.15rem;">Reserve your spot</h3>
+
+                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                {
+                    <div class="kmc-alert kmc-alert-danger">@Model.ErrorMessage</div>
+                }
+
+                @if (soldOut)
+                {
+                    <div class="kmc-alert kmc-alert-danger">This event is fully booked. Please check back for future events.</div>
+                }
+                else if (ended)
+                {
+                    <div class="kmc-alert kmc-alert-danger">Registration for this event has closed.</div>
+                }
+                else
+                {
+                    <form method="post" id="bookingForm">
+                        <div class="kmc-field">
+                            <label for="ParticipantName">Full name</label>
+                            <input type="text" id="ParticipantName" name="ParticipantName" value="@Model.ParticipantName" required />
+                        </div>
+                        <div class="kmc-field">
+                            <label for="Email">Email</label>
+                            <input type="email" id="Email" name="Email" value="@Model.Email" required />
+                        </div>
+                        <div class="kmc-field">
+                            <label for="Phone">Phone</label>
+                            <input type="tel" id="Phone" name="Phone" value="@Model.Phone" required />
+                        </div>
+
+                        @if (ev.HasTickets)
+                        {
+                            <div class="kmc-field">
+                                <label for="TicketClassId">Ticket class</label>
+                                <select id="TicketClassId" name="TicketClassId" required>
+                                    <option value="">Select a class</option>
+                                    @foreach (var t in ev.TicketClasses)
+                                    {
+                                        <option value="@t.TicketClassId" data-price="@t.Price" disabled="@(t.Available <= 0)">
+                                            @t.ClassName — Rs. @t.Price.ToString("N2") @(t.Available <= 0 ? "(Sold out)" : "")
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="kmc-field">
+                                <label for="Quantity">Number of seats</label>
+                                <input type="number" id="Quantity" name="Quantity" min="1" max="10" value="@(Model.Quantity < 1 ? 1 : Model.Quantity)" />
+                            </div>
+
+                            <hr class="kmc-divider" />
+                            <p class="kmc-eyebrow" style="margin-bottom:.8rem;">Card payment (mock)</p>
+                            <div id="paymentPanel">
+                                <div class="kmc-field">
+                                    <label for="CardHolderName">Name on card</label>
+                                    <input type="text" id="CardHolderName" name="CardHolderName" required />
+                                </div>
+                                <div class="kmc-field">
+                                    <label for="CardNumber">Card number</label>
+                                    <input type="text" id="CardNumber" name="CardNumber" inputmode="numeric" placeholder="4111 1111 1111 1111" required />
+                                </div>
+                                <div class="kmc-row-3">
+                                    <div class="kmc-field">
+                                        <label for="ExpiryMonth">Exp. month</label>
+                                        <input type="text" id="ExpiryMonth" name="ExpiryMonth" placeholder="MM" maxlength="2" required />
+                                    </div>
+                                    <div class="kmc-field">
+                                        <label for="ExpiryYear">Exp. year</label>
+                                        <input type="text" id="ExpiryYear" name="ExpiryYear" placeholder="YY" maxlength="4" required />
+                                    </div>
+                                    <div class="kmc-field">
+                                        <label for="Cvv">CVV</label>
+                                        <input type="password" id="Cvv" name="Cvv" maxlength="4" required />
+                                    </div>
+                                </div>
+                                <p class="hint">No real payment is processed — this simulates a card gateway for demo purposes.</p>
+                            </div>
+
+                            <div class="kmc-stat" style="padding:1rem 0 0.4rem; border:none;">
+                                <div class="label">Total due</div>
+                                <div class="num" id="bookingTotal">Rs. 0.00</div>
+                            </div>
+                        }
+                        else
+                        {
+                            <input type="hidden" name="Quantity" value="1" />
+                            <div class="kmc-alert kmc-alert-success">This event is free to attend — no payment required.</div>
+                        }
+
+                        <button type="submit" class="kmc-btn kmc-btn-gradient" style="width:100%; margin-top:.6rem;">
+                            @(ev.HasTickets ? "Pay & Reserve Seat" : "Confirm Registration")
+                        </button>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</section>

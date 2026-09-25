@@ -1,0 +1,91 @@
+@page
+@model KMCWeb.Pages.EventsModel
+@{
+    ViewData["Title"] = "Explore Events";
+}
+
+<div class="kmc-pagehead">
+    <p class="kmc-eyebrow">Browse</p>
+    <h1>Explore Events</h1>
+    <p>Filter by keyword, type or date to find what's on in Kandy.</p>
+</div>
+
+<section class="kmc-section kmc-section-tight">
+    <form method="get" class="kmc-card" style="padding:1.4rem; display:grid; grid-template-columns:1.4fr 1fr 1fr auto; gap:.8rem;">
+        <div class="kmc-field" style="margin:0;">
+            <label for="Keyword">Search</label>
+            <input type="text" id="Keyword" name="Keyword" value="@Model.Keyword" placeholder="Event name, venue..." />
+        </div>
+        <div class="kmc-field" style="margin:0;">
+            <label for="Category">Type</label>
+            <select id="Category" name="Category">
+                <option value="">All types</option>
+                @foreach (var c in Model.Categories)
+                {
+                    <option value="@c" selected="@(Model.Category == c)">@c</option>
+                }
+            </select>
+        </div>
+        <div class="kmc-field" style="margin:0;">
+            <label for="Date">Date</label>
+            <input type="date" id="Date" name="Date" value="@(Model.Date?.ToString("yyyy-MM-dd"))" />
+        </div>
+        <button type="submit" class="kmc-btn kmc-btn-gradient">Search</button>
+    </form>
+</section>
+
+<section class="kmc-section kmc-section-tight">
+    <div class="kmc-section-head">
+        <h2 style="font-size:1.3rem;">@Model.Results.Count event@(Model.Results.Count == 1 ? "" : "s") found</h2>
+        @if (!string.IsNullOrWhiteSpace(Model.Keyword) || !string.IsNullOrWhiteSpace(Model.Category) || Model.Date.HasValue)
+        {
+            <a class="kmc-btn kmc-btn-ghost kmc-btn-sm" asp-page="/Events">Clear filters</a>
+        }
+    </div>
+
+    @if (!Model.Results.Any())
+    {
+        <div class="kmc-card kmc-empty">
+            <p>No events match your search. Try a different keyword, type or date.</p>
+        </div>
+    }
+    else
+    {
+        <div class="kmc-grid">
+            @foreach (var ev in Model.Results)
+            {
+                <a class="kmc-card kmc-event-card" asp-page="/EventDetails" asp-route-id="@ev.EventId">
+                    <div class="kmc-event-media @(string.IsNullOrEmpty(ev.ImageUrl) ? "no-image" : "")"
+                         style="@(string.IsNullOrEmpty(ev.ImageUrl) ? "" : $"background-image:url('{ev.ImageUrl}')")">
+                        <span class="kmc-badge gradient">@ev.Category</span>
+                        @if (ev.IsFull)
+                        {
+                            <span class="kmc-badge full">Fully Booked</span>
+                        }
+                        else if (ev.HasTickets)
+                        {
+                            <span class="kmc-badge">Ticketed</span>
+                        }
+                        else
+                        {
+                            <span class="kmc-badge">Free Entry</span>
+                        }
+                    </div>
+                    <div class="kmc-event-body">
+                        <h3>@ev.Title</h3>
+                        <div class="kmc-event-meta">
+                            <span>📍 @ev.Location</span>
+                            <span>🗓️ @ev.StartDate.ToString("dd MMM yyyy") @(ev.StartDate.Date != ev.EndDate.Date ? "– " + ev.EndDate.ToString("dd MMM yyyy") : "")</span>
+                        </div>
+                        <div class="kmc-event-footer">
+                            <span class="hint" style="color:var(--kmc-text-dim); font-size:.78rem;">
+                                @(ev.SeatsLeft.HasValue ? $"{ev.SeatsLeft} seats left" : "Open registration")
+                            </span>
+                            <span class="kmc-btn kmc-btn-outline kmc-btn-sm">Details →</span>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    }
+</section>

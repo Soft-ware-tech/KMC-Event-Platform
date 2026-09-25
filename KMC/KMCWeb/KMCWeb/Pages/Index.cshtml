@@ -1,0 +1,104 @@
+@page
+@model KMCWeb.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="kmc-hero">
+    <div class="kmc-hero-inner">
+        <p class="kmc-eyebrow">Kandy Municipal Council · City Events Platform</p>
+        <h1>Discover what's happening <span class="accent">across Kandy</span>, all in one place.</h1>
+        <p class="lede">Search festivals, workshops, concerts and community gatherings hosted by the city and by local
+            organizers — then reserve your spot in a couple of clicks.</p>
+
+        <form method="get" asp-page="/Events" class="kmc-search-card">
+            <div class="kmc-field">
+                <label for="keyword">Search</label>
+                <input type="text" id="keyword" name="keyword" placeholder="Event name, venue..." />
+            </div>
+            <div class="kmc-field">
+                <label for="category">Type</label>
+                <select id="category" name="category">
+                    <option value="">All types</option>
+                    @foreach (var c in Model.Categories)
+                    {
+                        <option value="@c">@c</option>
+                    }
+                </select>
+            </div>
+            <div class="kmc-field">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" />
+            </div>
+            <button type="submit" class="kmc-btn kmc-btn-gradient">Search Events</button>
+        </form>
+    </div>
+</section>
+
+<section class="kmc-section">
+    <div class="kmc-section-head">
+        <div>
+            <p class="kmc-eyebrow">Coming up</p>
+            <h2>Upcoming Events</h2>
+        </div>
+        <a class="kmc-btn kmc-btn-ghost" asp-page="/Events">View all events</a>
+    </div>
+
+    @if (!Model.UpcomingEvents.Any())
+    {
+        <div class="kmc-card kmc-empty">
+            <p>No upcoming events published yet — check back soon, or <a asp-page="/Register" style="color:var(--kmc-blue);">list your own event</a>.</p>
+        </div>
+    }
+    else
+    {
+        <div class="kmc-grid">
+            @foreach (var ev in Model.UpcomingEvents)
+            {
+                <a class="kmc-card kmc-event-card" asp-page="/EventDetails" asp-route-id="@ev.EventId">
+                    <div class="kmc-event-media @(string.IsNullOrEmpty(ev.ImageUrl) ? "no-image" : "")"
+                         style="@(string.IsNullOrEmpty(ev.ImageUrl) ? "" : $"background-image:url('{ev.ImageUrl}')")">
+                        <span class="kmc-badge gradient">@ev.Category</span>
+                        @if (ev.IsFull)
+                        {
+                            <span class="kmc-badge full">Fully Booked</span>
+                        }
+                        else if (ev.HasTickets)
+                        {
+                            <span class="kmc-badge">Ticketed</span>
+                        }
+                        else
+                        {
+                            <span class="kmc-badge">Free Entry</span>
+                        }
+                    </div>
+                    <div class="kmc-event-body">
+                        <h3>@ev.Title</h3>
+                        <div class="kmc-event-meta">
+                            <span>📍 @ev.Location</span>
+                            <span>🗓️ @ev.StartDate.ToString("dd MMM yyyy") @(ev.StartDate.Date != ev.EndDate.Date ? "– " + ev.EndDate.ToString("dd MMM yyyy") : "")</span>
+                        </div>
+                        <div class="kmc-event-footer">
+                            <span class="hint" style="color:var(--kmc-text-dim); font-size:.78rem;">
+                                @(ev.SeatsLeft.HasValue ? $"{ev.SeatsLeft} seats left" : "Open registration")
+                            </span>
+                            <span class="kmc-btn kmc-btn-outline kmc-btn-sm">Details →</span>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    }
+</section>
+
+<section class="kmc-section kmc-section-tight">
+    <div class="kmc-card" style="padding:2.4rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;">
+        <div>
+            <p class="kmc-eyebrow">For organizers</p>
+            <h2 style="margin-bottom:.3rem;">Run your own event through KMC</h2>
+            <p style="margin:0; max-width:520px;">Local businesses, community groups and city departments can publish
+                events, manage ticket tiers and track registrations directly on the platform.</p>
+        </div>
+        <a class="kmc-btn kmc-btn-gradient" asp-page="/Register">Get Started →</a>
+    </div>
+</section>

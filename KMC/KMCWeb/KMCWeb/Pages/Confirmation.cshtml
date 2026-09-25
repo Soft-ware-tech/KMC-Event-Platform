@@ -1,0 +1,65 @@
+@page "{id:int}"
+@model KMCWeb.Pages.ConfirmationModel
+@{
+    ViewData["Title"] = "Booking Confirmed";
+    var b = Model.Booking!;
+}
+
+<section class="kmc-section" style="max-width:640px;">
+    <div class="kmc-card kmc-confirm-ticket">
+        <p class="kmc-eyebrow" style="color:var(--kmc-success);">Booking Confirmed</p>
+        <h1 style="font-size:1.8rem;">You're on the list! 🎉</h1>
+        <p>A confirmation has been recorded for <strong>@b.EventTitle</strong>.</p>
+
+        <hr class="kmc-divider" />
+
+        <div class="kmc-row" style="text-align:left;">
+            <div class="kmc-field">
+                <label>Booking reference</label>
+                <div>#KMC-@b.RegistrationId.ToString("D6")</div>
+            </div>
+            <div class="kmc-field">
+                <label>Status</label>
+                <div>
+                    <span class="kmc-badge @(b.PaymentStatus == "Paid" ? "status-paid" : "status-na")">@b.PaymentStatus</span>
+                </div>
+            </div>
+            <div class="kmc-field">
+                <label>Attendee</label>
+                <div>@b.ParticipantName</div>
+            </div>
+            <div class="kmc-field">
+                <label>Contact</label>
+                <div>@b.Email &middot; @b.Phone</div>
+            </div>
+            @if (!string.IsNullOrEmpty(b.TicketClassName))
+            {
+                <div class="kmc-field">
+                    <label>Ticket class</label>
+                    <div>@b.TicketClassName</div>
+                </div>
+                <div class="kmc-field">
+                    <label>Card</label>
+                    <div>@(string.IsNullOrEmpty(b.CardLast4) ? "-" : "•••• " + b.CardLast4)</div>
+                </div>
+            }
+            <div class="kmc-field">
+                <label>Seats</label>
+                <div>@b.Quantity</div>
+            </div>
+            <div class="kmc-field">
+                <label>Booked on</label>
+                <div>@b.RegisteredDate.ToString("dd MMM yyyy, h:mm tt")</div>
+            </div>
+        </div>
+
+        @if (b.AmountPaid > 0)
+        {
+            <p style="margin-top:1rem;" class="kmc-eyebrow">Amount paid</p>
+            <div class="amt">Rs. @b.AmountPaid.ToString("N2")</div>
+        }
+
+        <hr class="kmc-divider" />
+        <a class="kmc-btn kmc-btn-gradient" asp-page="/Events">Explore more events</a>
+    </div>
+</section>
